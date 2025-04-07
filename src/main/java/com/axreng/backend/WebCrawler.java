@@ -19,8 +19,7 @@ public class WebCrawler {
     private final List<String> foundUrls;
     private final Set<String> visitedUrls;
     private final Queue<String> urlsToVisit;
-    private static final String BASE_URL = System.getenv("BASE_URL") != null ?
-            System.getenv("BASE_URL") : "http://hiring.axreng.com/";
+    private static final String BASE_URL = System.getenv("BASE_URL");
 
     private static final Pattern HREF_PATTERN = Pattern.compile("href=[\"']([^\"']+)[\"']");
     private static final int MAX_RESULTS = 100;
