@@ -1,3 +1,5 @@
+package domain;
+
 import com.axreng.backend.domain.model.CrawlJob;
 import com.axreng.backend.domain.model.CrawlStatus;
 import org.junit.jupiter.api.Test;

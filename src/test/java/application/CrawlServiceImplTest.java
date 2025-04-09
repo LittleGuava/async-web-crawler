@@ -1,3 +1,5 @@
+package application;
+
 import com.axreng.backend.application.CrawlerServiceImpl;
 import com.axreng.backend.domain.model.CrawlJob;
 import com.axreng.backend.domain.model.CrawlStatus;

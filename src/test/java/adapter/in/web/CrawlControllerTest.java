@@ -1,7 +1,9 @@
+package adapter.in.web;
+
 import com.axreng.backend.domain.model.CrawlJob;
 import com.axreng.backend.domain.model.CrawlStatus;
 import com.axreng.backend.domain.port.CrawlerService;
-import com.axreng.backend.framework.adapter.in.api.CrawlController;
+import com.axreng.backend.framework.adapter.in.web.CrawlController;
 import com.google.gson.Gson;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

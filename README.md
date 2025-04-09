@@ -1,112 +1,106 @@
-# Teste Técnico: Backend Software Developer
+# Technical Test: Backend Software Developer
 
-Este projeto foi desenvolvido como parte de um teste técnico para implementar uma API HTTP para busca de URLs que contenham um termo fornecido pelo usuário. A aplicação utiliza uma arquitetura hexagonal, permitindo maior testabilidade e manutenibilidade.
-
----
-
-## 🎯 **Objetivo**
-
-Desenvolver uma aplicação Java para navegar por um website e listar as URLs que contenham um termo fornecido pelo usuário. O sistema suporta múltiplas buscas simultâneas e retorna resultados parciais enquanto a busca está em andamento.
+This project was developed as part of a technical test to implement an HTTP API for searching URLs containing a term provided by the user. The application uses a hexagonal architecture, allowing greater testability and maintainability.
 
 ---
 
-## 🚀 **Como executar a aplicação**
+## 🎯 **Objective**
 
-### **Pré-requisitos**
+Develop a Java application to navigate a website and list URLs containing a term provided by the user. The system supports multiple simultaneous searches and returns partial results while the search is in progress.
 
-- **Docker** instalado na máquina
-- **Variável de ambiente** `BASE_URL` configurada para determinar a URL base da busca de links.
+---
+
+## 🚀 **How to Run the Application**
+
+### **Prerequisites**
+
+- **Docker** installed on your machine
+- **Environment variable** `BASE_URL` configured to determine the base URL for link searches.
 
 
-### **Passos para subir a aplicação**
+### **Steps to Start the Application**
 
-1. Compile a imagem Docker:
-
+1. Build the Docker image:
 ```bash
 docker build . -t axreng/backend
 ```
 
-2. Execute o container Docker:
-
+2. Run the Docker container:
 ```bash
 docker run -e BASE_URL=http://hiring.axreng.com/ -p 4567:4567 --rm axreng/backend
 ```
 
-
-A aplicação estará disponível na URL: `http://localhost:4567`.
+The application will be available at: `http://localhost:4567`.
 
 ---
 
-## 📚 **Estrutura do Projeto**
+## 📚 **Project Structure**
 
-A aplicação segue a arquitetura hexagonal:
+The application follows the hexagonal architecture:
 
 ```
 com.axreng.backend/
 ├── domain/
 │   ├── model/             
-│   │   ├── CrawlJob.java         # Representa as características de uma busca
-│   │   ├── CrawlStatus.java      # Enum de status ("active" ou "done")
+│   │   ├── CrawlJob.java         # Represents the characteristics of a search job
+│   │   ├── CrawlStatus.java      # Enum for status ("active" or "done")
 │   ├── port/                    
-│       ├── CrawlerService.java   # Porta para execução de crawling
-│       ├── CrawlRepository.java  # Porta para persistência dos jobs
+│       ├── CrawlerService.java   # Port for executing crawling
+│       ├── CrawlRepository.java  # Port for job persistence
 ├── application/
-│   ├── CrawlServiceImpl.java     # Implementa os casos de uso do domínio
+│   ├── CrawlServiceImpl.java     # Implements domain use cases
 ├── adapter/
 │   ├── in/
 │   │   ├── web/
-│   │   │   ├── CrawlController.java # Controla as rotas da API
+│   │   │   ├── CrawlController.java # Controls API routes
 │   │   │   ├── dto/
-│   │   │       ├── CrawlRequest.java  # Representação da requisição POST
-│   │   │       ├── CrawlResponse.java # Representação da resposta GET
+│   │   │       ├── CrawlRequest.java  # Representation of POST request
+│   │   │       ├── CrawlResponse.java # Representation of GET response
 │   ├── out/
 │       ├── crawler/
-│       │   ├── WebCrawlerImpl.java    # Implementação do mecanismo de busca
+│       │   ├── WebCrawlerImpl.java    # Search mechanism implementation
 │       ├── persistence/
-│           ├── InMemoryCrawlRepository.java # Repositório de busca em memória
+│           ├── InMemoryCrawlRepository.java # In-memory search repository
 ├── config/
-│   ├── SparkConfig.java             # Configuração do servidor Spark
-├── Main.java                        # Ponto de entrada da aplicação
+│   ├── SparkConfig.java             # Spark server configuration
+├── Main.java                        # Application entry point
 └── test/
     ├── domain/
-    │   ├── CrawlJobTest.java        # Testes unitários para o modelo de domínio
+    │   ├── CrawlJobTest.java        # Unit tests for domain model
     ├── application/
-    │   ├── CrawlServiceImplTest.java # Testes unitários para os casos de uso
+    │   ├── CrawlServiceImplTest.java # Unit tests for use cases
     ├── adapter/
     │   ├── in/
     │   │   ├── web/
-    │   │       ├── CrawlControllerTest.java # Testes para o controlador da API
+    │   │       ├── CrawlControllerTest.java # Tests for API controller
     │   ├── out/
     │       ├── crawler/
-    │           ├── WebCrawlerImplTest.java # Testes para o mecanismo de busca
+    │           ├── WebCrawlerImplTest.java # Tests for search mechanism
 ```
 
 ---
 
-## ✨ **Principais Funcionalidades**
+## ✨ **Main Features**
 
 1. **POST `/crawl`**:
-    - Inicia uma nova busca com o termo fornecido.
-    - **Requisição**:
-
+    - Starts a new search with the provided term.
+    - **Request**:
 ```json
 {
   "keyword": "security"
 }
 ```
 
-    - **Resposta**:
-
-```json
+    - **Response**:
+    ```json
 {
-  "id": "abc12345"
+"id": "abc12345"
 }
 ```
 
 2. **GET `/crawl/:id`**:
-    - Retorna o status da busca e as URLs encontradas até o momento.
-    - **Resposta**:
-
+    - Returns the search status and URLs found so far.
+    - **Response**:
 ```json
 {
   "id": "abc12345",
@@ -118,76 +112,78 @@ com.axreng.backend/
 }
 ```
 
-3. Suporte a **múltiplas buscas simultâneas**.
-4. Retorno de **resultados parciais** durante a execução da busca.
-5. **Execução paralela** controlada por variável de ambiente (`MULTITHREAD_OPT`).
+3. Support for **multiple simultaneous searches**.
+4. Return of **partial results** during search execution.
+5. **Parallel execution** controlled by environment variable (`MULTITHREAD_OPT`).
 
 ---
 
-## 🔧 **Tecnologias Utilizadas**
+## 🔧 **Technologies Used**
 
-- **Java 11**: Linguagem principal para implementação.
-- **Maven**: Gerenciador de dependências e build.
-- **Spark Java**: Framework para a API HTTP.
-- **Gson**: Biblioteca para serialização/deserialização JSON.
-- **JUnit 5**: Framework para testes unitários.
-- **Mockito**: Mocking para simular dependências nos testes.
-
----
-
-## ⚙️ **Variáveis de Ambiente**
-
-- `BASE_URL`: Define a URL base onde as buscas serão feitas.
-    - Valor padrão: `http://hiring.axreng.com/`
-- `MULTITHREAD_OPT`: Define se a busca será feita em paralelo.
-    - Valores aceitos: `"true"` ou `"false"`
-    - Valor padrão: `"false"`
+- **Java 14**: Main language for implementation.
+- **Maven**: Dependency and build manager.
+- **Spark Java**: Framework for HTTP API.
+- **Gson**: Library for JSON serialization/deserialization.
+- **JUnit 5**: Framework for unit testing.
+- **Mockito**: Mocking library to simulate dependencies in tests.
 
 ---
 
-## ✅ **Testes Implementados**
+## ⚙️ **Environment Variables**
 
-Os testes cobrem todas as camadas da aplicação:
+- `BASE_URL`: Defines the base URL where searches will be performed.
+    - Default value: `http://hiring.axreng.com/`
+- `MULTITHREAD_OPT`: Defines whether the search will be performed in parallel.
+    - Accepted values: `"true"` or `"false"`
+    - Default value: `"false"`
 
-1. **Domínio (`CrawlJobTest`)**:
-    - Validação da criação do job e sua manipulação (como adicionar URLs encontradas).
-2. **Aplicação (`CrawlServiceImplTest`)**:
-    - Testa os casos de uso para iniciar buscas e consultar jobs existentes.
-3. **Adaptadores de Entrada (API, `CrawlControllerTest`)**:
-    - Verifica o comportamento esperado dos endpoints POST `/crawl` e GET `/crawl/:id`.
-4. **Adaptadores de Saída (`InMemoryCrawlRepositoryTest`)**:
-    - Valida o repositório em memória, garantindo persistência correta.
+---
+
+## ✅ **Implemented Tests**
+
+Tests cover all layers of the application:
+
+1. **Domain (`CrawlJobTest`)**:
+    - Validation of job creation and manipulation (e.g., adding found URLs).
+2. **Application (`CrawlServiceImplTest`)**:
+    - Tests use cases for starting searches and querying existing jobs.
+3. **Input Adapters (API, `CrawlControllerTest`)**:
+    - Validates expected behavior of POST `/crawl` and GET `/crawl/:id` endpoints.
+4. **Output Adapters (`InMemoryCrawlRepositoryTest`)**:
+    - Validates in-memory repository, ensuring correct persistence.
 5. **WebCrawler (`WebCrawlerImplTest`)**:
-    - Testa a lógica de resolução de URLs e extração de links.
+    - Tests URL resolution logic and link extraction.
 
 ---
 
-## 📊 **Avaliando o Desempenho**
+## 📊 **Performance Evaluation**
 
-- Busca paralela otimizada com `ExecutorService`.
-- URLs visitadas são armazenadas em uma estrutura thread-safe (`ConcurrentHashMap` ou `synchronizedSet`).
-- Limite de 100 resultados por busca, conforme especificado no teste.
-
----
-
-## 📝 **Observações**
-
-1. Os arquivos `pom.xml` e `Dockerfile` **não foram modificados**, conforme solicitado no teste técnico.
-2. A aplicação atende a todos os requisitos funcionais descritos, incluindo:
-    - Validação do `keyword` (mínimo 4, máximo 32 caracteres).
-    - Respeito à URL base, seguindo apenas links do mesmo domínio.
-    - Retorno parcial de resultados pela API enquanto a busca ainda está em andamento.
-3. A solução foi orientada para ser testável, escalável e simples de manter.
+- Optimized parallel search using `ExecutorService`.
+- Visited URLs are stored in a thread-safe structure (`ConcurrentHashMap` or `synchronizedSet`).
+- Limit of 100 results per search, as specified in the test.
 
 ---
 
-💡 **Dúvidas ou sugestões?** Sinta-se à vontade para entrar em contato! 😊
+## 📝 **Notes**
+
+1. The files `pom.xml` and `Dockerfile` were **not modified**, as requested in the technical test.
+2. The application meets all functional requirements described, including:
+    - Validation of `keyword` (minimum 4, maximum 32 characters).
+    - Respecting the base URL, following only links within the same domain.
+    - Partial result return via API while the search is still in progress.
+3. The solution is designed to be testable, scalable, and easy to maintain.
 
 ---
 
-Salve este conteúdo como um arquivo `.md` e será renderizado corretamente com qualquer visualizador Markdown. Caso precise de mais ajustes, é só avisar! 😊
+💡 **Questions or suggestions? Feel free to reach out! 😊
 
-<div>⁂</div>
+---
 
-[^1]: https://pplx-res.cloudinary.com/image/upload/v1743978412/user_uploads/IvWPLwtDoccAUPR/image.jpg
+## **Future Updates**
 
+- Implement a file system cache to store search results.
+- Fix tests (I didn't have time to fix them all).
+- Add more unit tests to cover all edge cases.
+- Implement a more robust error handling mechanism.
+
+---

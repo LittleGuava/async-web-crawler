@@ -1,4 +1,4 @@
-package com.axreng.backend.framework.adapter.in.api;
+package com.axreng.backend.framework.adapter.in.web;
 
 import com.axreng.backend.domain.dto.CrawlRequest;
 import com.axreng.backend.domain.dto.CrawlResponse;

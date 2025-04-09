@@ -1,6 +1,6 @@
 package com.axreng.backend;
 
-import com.axreng.backend.framework.adapter.in.api.CrawlController;
+import com.axreng.backend.framework.adapter.in.web.CrawlController;
 import com.axreng.backend.framework.adapter.out.persistence.InMemoryCrawlRepository;
 import com.axreng.backend.application.CrawlerServiceImpl;
 import com.axreng.backend.framework.config.SparkConfig;

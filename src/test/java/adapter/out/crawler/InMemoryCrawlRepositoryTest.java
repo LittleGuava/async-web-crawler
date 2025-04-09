@@ -1,3 +1,5 @@
+package adapter.out.crawler;
+
 import com.axreng.backend.domain.model.CrawlJob;
 import com.axreng.backend.domain.model.CrawlStatus;
 import com.axreng.backend.framework.adapter.out.persistence.InMemoryCrawlRepository;
