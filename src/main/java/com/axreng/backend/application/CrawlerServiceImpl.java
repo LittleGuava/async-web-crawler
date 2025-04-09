@@ -3,7 +3,7 @@ package com.axreng.backend.application;
 import com.axreng.backend.domain.model.CrawlJob;
 import com.axreng.backend.domain.port.CrawlerRepository;
 import com.axreng.backend.domain.port.CrawlerService;
-import com.axreng.backend.adapter.out.crawler.WebCrawlerImpl;
+import com.axreng.backend.framework.adapter.out.crawler.WebCrawlerImpl;
 
 import java.util.Optional;
 import java.util.concurrent.ExecutorService;
@@ -30,7 +30,6 @@ public class CrawlerServiceImpl implements CrawlerService {
         CrawlJob job = new CrawlJob(keyword);
         repository.save(job);
 
-        // Start crawling in a separate thread
         executorService.submit(() -> {
             try {
                 WebCrawlerImpl crawler = new WebCrawlerImpl(BASE_URL, keyword);
