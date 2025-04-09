@@ -49,6 +49,5 @@ buildNumber.properties
 # IntelliJ project files
 .idea
 *.iml
-out
 gen
 !/src/main/java/com/axreng/backend/framework/adapter/out/crawler/WebCrawlerImpl.java
