@@ -1,8 +1,8 @@
 package adapter.out.crawler;
 
-import com.axreng.backend.domain.model.CrawlJob;
-import com.axreng.backend.domain.model.CrawlStatus;
-import com.axreng.backend.framework.adapter.out.persistence.InMemoryCrawlRepository;
+import com.webcrawler.backend.domain.model.CrawlJob;
+import com.webcrawler.backend.domain.model.CrawlStatus;
+import com.webcrawler.backend.framework.adapter.out.persistence.InMemoryCrawlRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

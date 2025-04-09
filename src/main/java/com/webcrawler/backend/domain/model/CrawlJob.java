@@ -1,4 +1,4 @@
-package com.axreng.backend.domain.model;
+package com.webcrawler.backend.domain.model;
 
 import java.util.ArrayList;
 import java.util.List;

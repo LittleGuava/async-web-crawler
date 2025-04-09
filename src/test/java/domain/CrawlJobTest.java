@@ -1,7 +1,7 @@
 package domain;
 
-import com.axreng.backend.domain.model.CrawlJob;
-import com.axreng.backend.domain.model.CrawlStatus;
+import com.webcrawler.backend.domain.model.CrawlJob;
+import com.webcrawler.backend.domain.model.CrawlStatus;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import java.util.List;

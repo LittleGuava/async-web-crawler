@@ -1,6 +1,6 @@
-package com.axreng.backend.framework.adapter.out.crawler;
+package com.webcrawler.backend.framework.adapter.out.crawler;
 
-import com.axreng.backend.domain.model.CrawlJob;
+import com.webcrawler.backend.domain.model.CrawlJob;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

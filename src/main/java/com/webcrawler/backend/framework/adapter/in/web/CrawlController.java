@@ -1,9 +1,9 @@
-package com.axreng.backend.framework.adapter.in.web;
+package com.webcrawler.backend.framework.adapter.in.web;
 
-import com.axreng.backend.domain.dto.CrawlRequest;
-import com.axreng.backend.domain.dto.CrawlResponse;
-import com.axreng.backend.domain.port.CrawlerService;
-import com.axreng.backend.domain.model.CrawlJob;
+import com.webcrawler.backend.domain.dto.CrawlRequest;
+import com.webcrawler.backend.domain.dto.CrawlResponse;
+import com.webcrawler.backend.domain.port.CrawlerService;
+import com.webcrawler.backend.domain.model.CrawlJob;
 import com.google.gson.Gson;
 
 import spark.Request;

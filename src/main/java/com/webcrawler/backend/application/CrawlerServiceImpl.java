@@ -1,9 +1,9 @@
-package com.axreng.backend.application;
+package com.webcrawler.backend.application;
 
-import com.axreng.backend.domain.model.CrawlJob;
-import com.axreng.backend.domain.port.CrawlerRepository;
-import com.axreng.backend.domain.port.CrawlerService;
-import com.axreng.backend.framework.adapter.out.crawler.WebCrawlerImpl;
+import com.webcrawler.backend.domain.model.CrawlJob;
+import com.webcrawler.backend.domain.port.CrawlerRepository;
+import com.webcrawler.backend.domain.port.CrawlerService;
+import com.webcrawler.backend.framework.adapter.out.crawler.WebCrawlerImpl;
 
 import java.util.Optional;
 import java.util.concurrent.ExecutorService;
@@ -13,7 +13,7 @@ public class CrawlerServiceImpl implements CrawlerService {
     private final CrawlerRepository repository;
     private final ExecutorService executorService;
     public static final String BASE_URL = System.getenv("BASE_URL") != null ?
-            System.getenv("BASE_URL") : "http://hiring.axreng.com/";
+            System.getenv("BASE_URL") : "https://man7.org/linux/man-pages/";
 
     public CrawlerServiceImpl(CrawlerRepository repository) {
         this.repository = repository;

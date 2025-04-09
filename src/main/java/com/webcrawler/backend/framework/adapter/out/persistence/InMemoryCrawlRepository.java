@@ -1,7 +1,7 @@
-package com.axreng.backend.framework.adapter.out.persistence;
+package com.webcrawler.backend.framework.adapter.out.persistence;
 
-import com.axreng.backend.domain.model.CrawlJob;
-import com.axreng.backend.domain.port.CrawlerRepository;
+import com.webcrawler.backend.domain.model.CrawlJob;
+import com.webcrawler.backend.domain.port.CrawlerRepository;
 
 import java.util.Map;
 import java.util.Optional;

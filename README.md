@@ -22,12 +22,12 @@ Develop a Java application to navigate a website and list URLs containing a term
 
 1. Build the Docker image:
 ```bash
-docker build . -t axreng/backend
+docker build . -t webcrawler/backend
 ```
 
 2. Run the Docker container:
 ```bash
-docker run -e BASE_URL=http://hiring.axreng.com/ -p 4567:4567 --rm axreng/backend
+docker run -e BASE_URL=https://man7.org/linux/man-pages/ -p 4567:4567 --rm webcrawler/backend
 ```
 
 The application will be available at: `http://localhost:4567`.
@@ -39,7 +39,7 @@ The application will be available at: `http://localhost:4567`.
 The application follows the hexagonal architecture:
 
 ```
-com.axreng.backend/
+com.webcrawler.backend/
 ├── domain/
 │   ├── model/             
 │   │   ├── CrawlJob.java         # Represents the characteristics of a search job
@@ -106,8 +106,8 @@ com.axreng.backend/
   "id": "abc12345",
   "status": "active",
   "urls": [
-    "http://hiring.axreng.com/index2.html",
-    "http://hiring.axreng.com/htmlman1/chcon.1.html"
+    "https://man7.org/linux/man-pages/man7/security.7.html",
+    "https://man7.org/linux/man-pages/"
   ]
 }
 ```
@@ -132,7 +132,7 @@ com.axreng.backend/
 ## ⚙️ **Environment Variables**
 
 - `BASE_URL`: Defines the base URL where searches will be performed.
-    - Default value: `http://hiring.axreng.com/`
+    - Default value: `https://man7.org/linux/man-pages/`
 - `MULTITHREAD_OPT`: Defines whether the search will be performed in parallel.
     - Accepted values: `"true"` or `"false"`
     - Default value: `"false"`

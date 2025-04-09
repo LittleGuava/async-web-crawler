@@ -1,4 +1,4 @@
-package com.axreng.backend.domain.dto;
+package com.webcrawler.backend.domain.dto;
 
 public class CrawlRequest {
     private String keyword;
