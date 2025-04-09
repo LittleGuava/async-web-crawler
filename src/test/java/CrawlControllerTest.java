@@ -60,22 +60,18 @@ public class CrawlControllerTest {
 
     @Test
     void postCrawlShouldReturn400ForMissingKeyword() throws Exception {
-        // Arrange
         String requestBody = "{}"; // No keyword
         when(request.body()).thenReturn(requestBody);
 
-        // Act
         Route route = controller.handlePostCrawl();
         Object result = route.handle(request, response);
 
-        // Assert
         verify(response).status(400);
         assertEquals("{\"error\": \"Keyword is required\"}", result);
     }
 
     @Test
     void getCrawlShouldReturnCrawlJobStatusAndUrls() throws Exception {
-        // Arrange
         String id = "12345678";
         when(request.params(":id")).thenReturn(id);
 

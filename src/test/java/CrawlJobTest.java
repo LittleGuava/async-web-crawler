@@ -39,15 +39,12 @@ public class CrawlJobTest {
 
     @Test
     void shouldReturnDefensiveCopyOfFoundUrls() {
-        // Arrange
         CrawlJob job = new CrawlJob("test");
         job.addFoundUrl("http://example.com");
 
-        // Act
         List<String> urls = job.getFoundUrls();
         urls.add("http://shouldnotbeadded.com");
 
-        // Assert
         assertEquals(1, job.getFoundUrls().size());
     }
 }

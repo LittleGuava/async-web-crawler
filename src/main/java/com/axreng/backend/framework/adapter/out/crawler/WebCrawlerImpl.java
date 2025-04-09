@@ -8,7 +8,6 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
@@ -160,7 +159,6 @@ public class WebCrawlerImpl {
     }
 
     private String fetchUrl(String urlString) {
-        // Método existente fetchUrl mantido sem alterações
         HttpURLConnection connection = null;
         try {
             URL url = new URL(urlString);
