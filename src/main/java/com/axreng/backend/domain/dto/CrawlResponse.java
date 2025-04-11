@@ -1,4 +1,4 @@
-package com.webcrawler.backend.domain.dto;
+package com.axreng.backend.domain.dto;
 
 import java.util.List;
 

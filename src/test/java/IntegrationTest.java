@@ -1,10 +1,10 @@
-import com.webcrawler.backend.application.CrawlerServiceImpl;
-import com.webcrawler.backend.domain.model.CrawlJob;
-import com.webcrawler.backend.domain.model.CrawlStatus;
-import com.webcrawler.backend.domain.port.CrawlerRepository;
-import com.webcrawler.backend.domain.port.CrawlerService;
-import com.webcrawler.backend.framework.adapter.in.web.CrawlController;
-import com.webcrawler.backend.framework.adapter.out.persistence.InMemoryCrawlRepository;
+import com.axreng.backend.application.CrawlerServiceImpl;
+import com.axreng.backend.domain.model.CrawlJob;
+import com.axreng.backend.domain.model.CrawlStatus;
+import com.axreng.backend.domain.port.CrawlerRepository;
+import com.axreng.backend.domain.port.CrawlerService;
+import com.axreng.backend.framework.adapter.in.web.CrawlController;
+import com.axreng.backend.framework.adapter.out.persistence.InMemoryCrawlRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -22,7 +22,7 @@ public class IntegrationTest {
         service = new CrawlerServiceImpl(repository);
         controller = new CrawlController(service);
 
-        System.setProperty("BASE_URL", "https://man7.org/linux/man-pages/");
+        System.setProperty("BASE_URL", "http://hiring.axreng.com/");
         System.setProperty("MULTITHREAD_OPT", "false");
     }
 

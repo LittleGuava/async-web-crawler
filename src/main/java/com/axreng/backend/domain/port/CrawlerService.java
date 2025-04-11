@@ -1,6 +1,6 @@
-package com.webcrawler.backend.domain.port;
+package com.axreng.backend.domain.port;
 
-import com.webcrawler.backend.domain.model.CrawlJob;
+import com.axreng.backend.domain.model.CrawlJob;
 
 public interface CrawlerService {
     CrawlJob startCrawling(String keyword);

@@ -1,9 +1,9 @@
 package application;
 
-import com.webcrawler.backend.application.CrawlerServiceImpl;
-import com.webcrawler.backend.domain.model.CrawlJob;
-import com.webcrawler.backend.domain.model.CrawlStatus;
-import com.webcrawler.backend.domain.port.CrawlerRepository;
+import com.axreng.backend.application.CrawlerServiceImpl;
+import com.axreng.backend.domain.model.CrawlJob;
+import com.axreng.backend.domain.model.CrawlStatus;
+import com.axreng.backend.domain.port.CrawlerRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;

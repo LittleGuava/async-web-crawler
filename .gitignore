@@ -50,4 +50,4 @@ buildNumber.properties
 .idea
 *.iml
 gen
-!/src/main/java/com/webcrawler/backend/framework/adapter/out/crawler/WebCrawlerImpl.java
+!/src/main/java/com/axreng/backend/framework/adapter/out/crawler/WebCrawlerImpl.java

@@ -1,6 +1,6 @@
-package com.webcrawler.backend.framework.config;
+package com.axreng.backend.framework.config;
 
-import com.webcrawler.backend.framework.adapter.in.web.CrawlController;
+import com.axreng.backend.framework.adapter.in.web.CrawlController;
 import spark.Service;
 
 public class SparkConfig {
